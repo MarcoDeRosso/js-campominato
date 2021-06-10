@@ -28,19 +28,19 @@ qui SE il numero generato è diverso da quelli presenti dentro l'array, ALLORA P
 Mi dovrò assicurare che l'utente inserisca solo un numero, che vada da 1 a 100 ed in caso contrario gli farò ripetere l'azione, 
 grazie ad un ciclo while  */
 var userArray = [];
-while (userArray.length < 3) {
+while (userArray.length < 84) {
     var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100"))
     while (isNaN(userNum) || userNum < 1 || userNum > 100) {
         alert("attenzione devi inserire un numero da 1 a 100");
         var userNum = parseInt(prompt("inserisci un numero da 1 a 100"));
     }
     if (arrayNum.includes(userNum) || (userArray.includes(userNum))) {
-        output.innerHTML = "Mi dispace, hai perso!"
+        output.innerHTML += "Mi dispace, hai perso!"
         break
     }
-
     userArray.push(userNum)
 }
+output.innerHTML += "Complimenti il tuo risultato è: " + userArray.length;
 
 console.log(userNum, " numero utente")
 console.log(userArray)
@@ -50,3 +50,4 @@ il while avrà quindi come condizione la lungezza dell'array che dovrà essere m
 
 /*ora, dovrò fare in modo che l'utente, se scrive un numero dentro all'array generato dalla funzione perde il gioco, con break che interrompe il ciclo while
 devo anche scrivere una codizione che se l'utente ripete un numero dentro l'array utente, ha perso*/
+/*dichiaro il punteggio dell'utente prendendo il numero di "item" dentro l'array dell'utente */
