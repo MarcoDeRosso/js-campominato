@@ -28,13 +28,13 @@ qui SE il numero generato è diverso da quelli presenti dentro l'array, ALLORA P
 Mi dovrò assicurare che l'utente inserisca solo un numero, che vada da 1 a 100 ed in caso contrario gli farò ripetere l'azione, 
 grazie ad un ciclo while  */
 var userArray = [];
-while (userArray.length < 2) {
+while (userArray.length < 3) {
     var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100"))
     while (isNaN(userNum) || userNum < 1 || userNum > 100) {
         alert("attenzione devi inserire un numero da 1 a 100");
         var userNum = parseInt(prompt("inserisci un numero da 1 a 100"));
     }
-    if (arrayNum.includes(userNum)) {
+    if (arrayNum.includes(userNum) || (userArray.includes(userNum))) {
         output.innerHTML = "Mi dispace, hai perso!"
         break
     }
