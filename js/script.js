@@ -21,3 +21,15 @@ di ripetersi 16 volte fino a che l'array.length non sarà pieno*/
 
 /*Devo però fare in modo che dentro l'array vengano messi solo numeri diversi, 
 qui SE il numero generato è diverso da quelli presenti dentro l'array, ALLORA PUSHALO */
+
+/*avendo generato le 16 mine, pronte ad esplodere, andrò a chiedere all'utente un numero, tramite prompt. 
+Mi dovrò assicurare che l'utente inserisca solo un numero, che vada da 1 a 100 ed in caso contrario gli farò ripetere l'azione, 
+grazie ad un ciclo while  */
+
+var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100"))
+while (isNaN(userNum) || userNum < 1 || userNum > 100) {
+    alert("attenzione devi inserire un numero da 1 a 100");
+    var userNum = parseInt(prompt("inserisci un numero da 1 a 100"));
+}
+
+console.log(userNum, " numero utente")
