@@ -25,11 +25,18 @@ qui SE il numero generato è diverso da quelli presenti dentro l'array, ALLORA P
 /*avendo generato le 16 mine, pronte ad esplodere, andrò a chiedere all'utente un numero, tramite prompt. 
 Mi dovrò assicurare che l'utente inserisca solo un numero, che vada da 1 a 100 ed in caso contrario gli farò ripetere l'azione, 
 grazie ad un ciclo while  */
-
-var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100"))
-while (isNaN(userNum) || userNum < 1 || userNum > 100) {
-    alert("attenzione devi inserire un numero da 1 a 100");
-    var userNum = parseInt(prompt("inserisci un numero da 1 a 100"));
+var userArray = [];
+while (userArray.length < 84) {
+    var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100"))
+    while (isNaN(userNum) || userNum < 1 || userNum > 100) {
+        alert("attenzione devi inserire un numero da 1 a 100");
+        var userNum = parseInt(prompt("inserisci un numero da 1 a 100"));
+    }
+    userArray.push(userNum)
 }
 
 console.log(userNum, " numero utente")
+console.log(userArray)
+
+/*Devo chiedere questo numero massimo 86 volte (100-16), avrò bisogno di un ciclo while e di un array dove mettere i numeri generati dall'utente.
+il while avrà quindi come condizione la lungezza dell'array che dovrà essere minore di 84*/
