@@ -25,7 +25,7 @@ var arrayNum = [];
 function numberGenerator(min, max) {
     while (arrayNum.length < 16) {
         var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-        if (randomNum !== arrayNum.length) {
+        if (!arrayNum.includes(randomNum)) {
             arrayNum.push(randomNum)
         }
 
