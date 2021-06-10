@@ -50,7 +50,7 @@ while (userArray.length < (max - 16)) {
     var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a " + max + ", occhio a non ripetere lo stesso numero! ;)"))
     while (isNaN(userNum) || userNum < 1 || userNum > max) {
         alert("attenzione devi inserire un numero da 1 a 100");
-        var userNum = parseInt(prompt("inserisci un numero da 1 a 100, occhio a non ripetere lo stesso numero! ;)"));
+        var userNum = parseInt(prompt("inserisci un numero da 1 a " + max + ", occhio a non ripetere lo stesso numero! ;)"));
     }
     if (arrayNum.includes(userNum) || (userArray.includes(userNum))) {
         output.innerHTML += "Mi dispace, hai trovato la mina!" + "\n" + "Le mine erano: " + arrayNum
