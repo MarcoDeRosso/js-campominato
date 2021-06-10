@@ -1,21 +1,20 @@
 var output = document.getElementById("output")
 
 var userChallenge = parseInt(prompt("Scegli il livello di difficoltà: 0, 1, 2."))
-while (isNaN(userChallenge) || userChallenge < 1 || userChallenge > 2) {
+while (isNaN(userChallenge) || userChallenge < 0 || userChallenge > 2) {
     alert("Attenzione i livelli di difficoltà sono: 0, 1, 2.")
     var userChallenge = parseInt(prompt("Scegli il livello di difficoltà: 0, 1, 2."))
 }
 console.log(userChallenge);
 switch (userChallenge) {
-    case 0:
-        max = 100;
-        break;
     case 1:
         max = 80;
         break;
     case 2:
         max = 50;
         break;
+    default:
+        max = 100;
 }
 console.log(max, "questo è il valore di max")
     /*per prima cosa faccio creare al computer 16 numeri randomici, tramite una funzione, dandogli un 
@@ -48,7 +47,7 @@ Mi dovrò assicurare che l'utente inserisca solo un numero, che vada da 1 a 100 
 grazie ad un ciclo while  */
 var userArray = [];
 while (userArray.length < (max - 16)) {
-    var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100, occhio a non ripetere lo stesso numero! ;)"))
+    var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a " + max + ", occhio a non ripetere lo stesso numero! ;)"))
     while (isNaN(userNum) || userNum < 1 || userNum > max) {
         alert("attenzione devi inserire un numero da 1 a 100");
         var userNum = parseInt(prompt("inserisci un numero da 1 a 100, occhio a non ripetere lo stesso numero! ;)"));
