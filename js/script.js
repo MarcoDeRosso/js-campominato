@@ -29,18 +29,18 @@ Mi dovrò assicurare che l'utente inserisca solo un numero, che vada da 1 a 100 
 grazie ad un ciclo while  */
 var userArray = [];
 while (userArray.length < 84) {
-    var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100"))
+    var userNum = parseInt(prompt("Tenta la FORTUNA! Inserisci un numero da 1 a 100, occhio a non ripetere lo stesso numero! ;)"))
     while (isNaN(userNum) || userNum < 1 || userNum > 100) {
         alert("attenzione devi inserire un numero da 1 a 100");
-        var userNum = parseInt(prompt("inserisci un numero da 1 a 100"));
+        var userNum = parseInt(prompt("inserisci un numero da 1 a 100, occhio a non ripetere lo stesso numero! ;)"));
     }
     if (arrayNum.includes(userNum) || (userArray.includes(userNum))) {
-        output.innerHTML += "Mi dispace, hai perso!"
+        output.innerHTML += "Mi dispace, hai trovato la mina!" + "\n" + "Le mine erano: " + arrayNum
         break
     }
     userArray.push(userNum)
 }
-output.innerHTML += "Complimenti il tuo risultato è: " + userArray.length;
+output.innerHTML += "\n" + "Complimenti il tuo risultato è: " + userArray.length;
 
 console.log(userNum, " numero utente")
 console.log(userArray)
