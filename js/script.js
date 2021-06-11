@@ -23,17 +23,17 @@ console.log(max, "questo è il valore di max")
 var arrayNum = [];
 
 function numberGenerator(min, max) {
-    while (arrayNum.length < 16) {
-        var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-        if (!arrayNum.includes(randomNum)) {
-            arrayNum.push(randomNum)
-        }
-
-    }
-    console.log(arrayNum)
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+while (arrayNum.length < 16) {
+    var randomNum = numberGenerator(1, max)
+    if (!arrayNum.includes(randomNum)) {
+        arrayNum.push(randomNum)
+    }
 
-console.log(numberGenerator(1, max))
+}
+console.log(arrayNum)
+
 
 /*devo però generare 16 numeri, dovrò quindi utilizzare un ciclo che ripeta il generatore di numeri n volte fino a 16
 facendo però in modo che ogni numero generato venga inserito dentro un array vuoto, tramite un push. darò quindi al while, come condizione,
