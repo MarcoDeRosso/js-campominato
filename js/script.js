@@ -63,7 +63,6 @@ while (userArray.length < (max - 16)) {
     } else {
         alert("Attenzione hai ripetuto lo stesso numero!")
     }
-    userArray.push(userNum)
 }
 output.innerHTML += "\n" + "Complimenti il tuo risultato è: " + userArray.length;
 
