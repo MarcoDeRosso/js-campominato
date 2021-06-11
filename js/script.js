@@ -52,16 +52,22 @@ while (userArray.length < (max - 16)) {
         alert("attenzione devi inserire un numero da 1 a 100");
         var userNum = parseInt(prompt("inserisci un numero da 1 a " + max + ", occhio a non ripetere lo stesso numero! ;)"));
     }
-    if (arrayNum.includes(userNum) || (userArray.includes(userNum))) {
-        output.innerHTML += "Mi dispace, hai trovato la mina!" + "\n" + "Le mine erano: " + arrayNum
-        break
+    if (!userArray.includes(userNum)) {
+        if (arrayNum.includes(userNum)) {
+            output.innerHTML += "Mi dispace, hai trovato la mina!" + "\n" + "Le mine erano: " + arrayNum
+            break
+        } else {
+            userArray.push(userNum);
+            console.log(userArray)
+        }
+    } else {
+        alert("Attenzione hai ripetuto lo stesso numero!")
     }
     userArray.push(userNum)
 }
 output.innerHTML += "\n" + "Complimenti il tuo risultato è: " + userArray.length;
 
 console.log(userNum, " numero utente")
-console.log(userArray)
 
 /*Devo chiedere questo numero massimo 86 volte (100-16), avrò bisogno di un ciclo while e di un array dove mettere i numeri generati dall'utente.
 il while avrà quindi come condizione la lungezza dell'array che dovrà essere minore di 84*/
